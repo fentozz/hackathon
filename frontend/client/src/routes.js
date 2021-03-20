@@ -18,7 +18,7 @@ export const useRoutes = (isAuthenticated, role) => {
                     </Switch>
                 );
                 break;
-            case 2:
+            case 'SPM_USER':
                 return (
                     <Switch>
                         <Route path="/myfiles" exact>

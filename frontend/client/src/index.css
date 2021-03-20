@@ -128,3 +128,121 @@ body{
 #range5 *:-ms-input-placeholder {
     color: #ccc;
 }
+
+.header {
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.headerContent {
+    box-shadow: 0 3px 2px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 3px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 3px 2px rgba(0,0,0,0.3);
+    background-color: #f2f2f2;
+    background-repeat: no-repeat;
+    background-image: -ms-linear-gradient(top, #f2f2f2, #e4e4e4);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e4e4e4));
+    background-image: -webkit-linear-gradient(top, #f2f2f2, #e4e4e4);
+    background-image: -o-linear-gradient(top, #f2f2f2, #e4e4e4);
+    background-image: linear-gradient(top, #f2f2f2, #e4e4e4);
+    background-image: -moz-linear-gradient(top, #f2f2f2, #e4e4e4);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f2f2f2', endColorstr='#e4e4e4', GradientType=0);
+    height: 33px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding-top: 10px;
+}
+
+.logo {
+    display: inline-block;
+    float: left;
+    font-weight: bold;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    text-shadow: 0 1px 0 white;
+    color: #373e47;
+    padding-left: 10px;
+}
+
+.logo a:hover {
+    color: #a45f93;
+}
+
+*:first-child+html .logo a {
+    line-height: normal;
+}
+
+.pink {
+    color: #a45f93;
+}
+
+.logo a:hover .pink {
+    color: #373e47;
+}
+
+.gray {
+    color: #8b95a4;
+    font-size: 18px;
+}
+
+/*ÐÐ°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ñ*/
+ul.nav {
+    margin: 0;
+    padding: 3px 0 0 0;
+    overflow: hidden;
+    float: right;
+}
+
+ul.nav li {
+    float: left;
+    list-style: none;
+    padding: 0;
+}
+
+ul.nav li a {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 0 30px;
+    display: block;
+    color: #143567;
+    text-shadow: 0 1px 0 white;
+}
+
+ul.nav li a.active {
+    color: #a45f93;
+}
+
+ul.nav li a:hover {
+    color: #a45f93;
+}
+/*ÐšÐ¾Ð½Ñ‚ÐµÐ½Ñ‚*/
+.content {
+    padding: 10px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #67707d;
+    background-color: #475363;
+    background-color: rgba(87,103,127,0.5);
+    overflow: hidden;
+    height: 90%;
+}
+
+*:first-child+html .content {
+    background-color: #475363;
+}
+
+.wrapper {
+    width: 980px;
+    padding: 0 10px;
+    margin: 0 auto;
+    min-height: 100%;
+    position: relative;
+
+}
