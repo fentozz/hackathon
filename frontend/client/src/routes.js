@@ -4,6 +4,8 @@ import {FilesPage} from "./pages/FilesPage";
 import {SharedFilesPage} from "./pages/SharedFilesPage";
 import {AuthPage} from "./pages/AuthPage";
 import {UserManagementPage} from "./pages/UserManagementPage";
+import {Navbar} from "./components/Navbar";
+import {AdminsFilePage} from "./pages/AdminFilePage";
 
 export const useRoutes = (isAuthenticated, role) => {
     if (isAuthenticated) {
@@ -11,16 +13,23 @@ export const useRoutes = (isAuthenticated, role) => {
             case 'SPM_ADMIN':
                 return (
                     <Switch>
-                        <Route path="/usermanagement" exact>
-                            <UserManagementPage/>
-                        </Route>
-                        <Redirect to="/usermanagement"/>
+                        <div className="wrapper">
+                            <Navbar role={role}/>
+                            <Route path="/usermanagement" exact>
+                                <UserManagementPage/>
+                            </Route>
+                            <Route path="/adminsfile" exact>
+                                <AdminsFilePage/>
+                            </Route>
+                            <Redirect to="/usermanagement"/>
+                        </div>
                     </Switch>
                 );
                 break;
             case 'SPM_USER':
                 return (
                     <Switch>
+                        <div className="wrapper">
                         <Route path="/myfiles" exact>
                             <FilesPage/>
                         </Route>
@@ -28,6 +37,7 @@ export const useRoutes = (isAuthenticated, role) => {
                             <SharedFilesPage/>
                         </Route>
                         <Redirect to="/myfiles"/>
+                        </div>
                     </Switch>
                 );
                 break;

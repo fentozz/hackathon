@@ -16,6 +16,18 @@ export const AuthPage = () => {
         clearError();
     }, [error, message, clearError]);
 
+    useEffect(() => {
+        const listener = event => {
+            if (event.code === "Enter" || event.code === "NumpadEnter") {
+                document.getElementById("loginned").click()
+            }
+        };
+        document.addEventListener("keydown", listener);
+        return () => {
+            document.removeEventListener("keydown", listener);
+        };
+    }, []);
+
     const loginHandler = async (event) => {
         try {
             const login = document.getElementById('login').value,
@@ -51,7 +63,7 @@ export const AuthPage = () => {
                             <div className="form">
                                 <input id="login" type="text" placeholder="Логин"/>
                                 <input id="password" type="password" placeholder="Пароль"/>
-                                <button onClick={loginHandler} disabled={loading}> Вход</button>
+                                <button id="loginned" onClick={loginHandler} disabled={loading}>Вход</button>
 
                             </div>
                         </div>

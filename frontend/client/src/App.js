@@ -13,12 +13,6 @@ function App() {
 
     return (
         <AuthContext.Provider value={{token, role, login, logout, isAuthenticated}}>
-            {isAuthenticated && <div className="wrapper">
-                <Navbar role = {role}/>
-                <div className="content">
-                
-                </div>
-            </div>}
             <Router>
                 {routes}
             </Router>
