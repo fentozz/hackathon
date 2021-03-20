@@ -1,0 +1,120 @@
+import org.springframework.boot.gradle.tasks.run.BootRun
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.2.4.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+    id 'net.nemerosa.versioning' version '2.8.2'
+    id 'org.sonarqube' version '2.7'
+}
+
+javadoc {
+    options.addStringOption("charset", "UTF-8")
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+group 'org.bars.hackathon'
+version 'DEMO'
+
+//mainClassName = "ru.pm.Main"
+
+sourceCompatibility = 1.8
+
+version = 'pm_base_' + versioning.info.full + '.jar'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+task bootRunSigma(type: BootRun, dependsOn: 'build', group: 'pm-custom') {
+    doFirst() {
+        main = bootJar.mainClassName
+        classpath = sourceSets.main.runtimeClasspath
+        systemProperty 'spring.profiles.active', 'sigma'
+    }
+}
+
+task bootRunAlpha(type: BootRun, dependsOn: 'build', group: 'pm-custom') {
+    doFirst() {
+        main = bootJar.mainClassName
+        classpath = sourceSets.main.runtimeClasspath
+        systemProperty 'spring.profiles.active', 'alpha'
+    }
+}
+
+configurations {
+    all {
+        exclude group: 'ch.qos.logback', module: 'logback-classic'
+        exclude group: 'org.slf4j', module: 'slf4j-nop'
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+        exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-dependencies:2.2.4.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.hibernate:hibernate-jcache'
+    runtimeOnly 'org.ehcache:ehcache'
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.4.3'
+    implementation "org.springdoc:springdoc-openapi-security:1.4.3"
+    implementation "org.springdoc:springdoc-openapi-data-rest:1.4.3"
+    //logging
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    //logging
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    //websocket's
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.webjars:webjars-locator-core'
+    implementation 'org.webjars:sockjs-client:1.0.2'
+    implementation 'org.webjars:stomp-websocket:2.3.3'
+    implementation 'org.webjars:bootstrap:3.3.7'
+    implementation 'org.webjars:jquery:3.1.1-1'
+
+    //tests
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'junit', module: 'junit'
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.9'
+    implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '2.10.2'
+
+
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+    implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
+    implementation group: 'com.google.guava', name: 'guava', version: '29.0-jre'
+
+    testImplementation('org.springframework.security:spring-security-test')
+
+    implementation group: 'org.apache.maven.plugins', name: 'maven-surefire-plugin', version: '3.0.0-M4'
+    testImplementation group: 'org.apache.maven.plugins', name: 'maven-failsafe-plugin', version: '3.0.0-M4'
+
+    implementation 'org.projectlombok:lombok:1.18.10'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.10'
+
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    implementation group: 'org.apache.poi', name: 'poi', version: '4.1.1'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '4.1.1'
+    implementation group: 'org.apache.commons', name: 'commons-collections4', version: '4.4'
+
+    implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-jaxb-annotations', version: '2.11.1'
+
+    //FIX: class file for javax.interceptor.InterceptorBinding not found when generating javadoc
+    implementation group: 'javax.interceptor', name: 'javax.interceptor-api', version: '1.2.2'
+}
