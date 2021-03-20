@@ -1,0 +1,6 @@
+{
+  "port" : 3002,
+  "hostName" : "127.0.0.1",
+  "backHostName" : "127.0.0.1",
+  "backPort" : 7777
+}
