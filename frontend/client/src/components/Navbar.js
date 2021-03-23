@@ -3,10 +3,7 @@ import {NavLink} from "react-router-dom";
 import {AuthContext} from "../context/AuthContext";
 
 export const Navbar = (role) => {
-
     role = role.role;
-
-    console.log('rolenavbar', role);
 
     const auth = useContext(AuthContext);
 

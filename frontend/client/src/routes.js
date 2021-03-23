@@ -30,13 +30,14 @@ export const useRoutes = (isAuthenticated, role) => {
                 return (
                     <Switch>
                         <div className="wrapper">
-                        <Route path="/myfiles" exact>
-                            <FilesPage/>
-                        </Route>
-                        <Route path="/sharedfiles" exact>
-                            <SharedFilesPage/>
-                        </Route>
-                        <Redirect to="/myfiles"/>
+                            <Navbar role={role}/>
+                            <Route path="/myfiles" exact>
+                                <FilesPage/>
+                            </Route>
+                            <Route path="/sharedfiles" exact>
+                                <SharedFilesPage/>
+                            </Route>
+                            <Redirect to="/myfiles"/>
                         </div>
                     </Switch>
                 );

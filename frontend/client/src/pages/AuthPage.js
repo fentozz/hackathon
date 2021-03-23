@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import '../index.css';
 import {useHttp} from "../hooks/http.hook";
-import {ToastsContainer, ToastsStore} from 'react-toasts';
 import {useMessage} from "../hooks/message.hook";
 import {AuthContext} from "../context/AuthContext";
 
