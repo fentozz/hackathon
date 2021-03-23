@@ -1,0 +1,10 @@
+
+R
+java:S1854"8Remove this useless assignment to local variable "user".(ÁÂ¶w8È–Œ…/
+C
+java:S1481")Remove this unused "user" local variable.(ÁÂ¶w8È–Œ…/
+R
+java:S1854"8Remove this useless assignment to local variable "user".(ÁÂ¶w8¼İ’–…/
+V	java:S125"<This block of commented-out lines of code should be removed.(«ÎÿÇ8¼İ’–…/
+C
+java:S1481")Remove this unused "user" local variable.(ÁÂ¶w8¼İ’–…/

@@ -1,0 +1,13 @@
+
+c
+java:S1128"HRemove this unused import 'org.springframework.data.domain.PageRequest'.(ºêâÚ8²ú¶ÿ„/
+j
+java:S1128"ORemove this unused import 'org.bars.hackathon.service.admin.dto.UserCreateDTO'.(ñ´Ïƒ8ÅéÔˆ…/
+~
+java:S1128"^Remove this unused import 'org.bars.hackathon.service.accounts.dao.entity.enums.UserRoleEnum'.(£÷÷¯ûÿÿÿÿ8–•ìˆ…/
+V	java:S125"<This block of commented-out lines of code should be removed.(«ÎÿÇ8ô£’–…/
+a
+java:S1128"ARemove this unused import 'org.springframework.data.domain.Page'.(˜âŽŽüÿÿÿÿ8²ú¶ÿ„/
+N
+java:S1128".Remove this unused import 'java.time.Instant'.(Â‚éñÿÿÿÿÿ8ÃþŽ€…/
+V	java:S125"<This block of commented-out lines of code should be removed.(«ÎÿÇ8´’–…/

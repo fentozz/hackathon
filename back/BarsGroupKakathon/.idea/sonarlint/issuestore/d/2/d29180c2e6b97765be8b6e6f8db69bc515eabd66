@@ -1,0 +1,21 @@
+
+a
+java:S1128"FRemove this unused import 'org.springframework.validation.DataBinder'.(Éêìı8¨Øâˆ…/
+‚
+java:S1128"bRemove this unused import 'org.bars.hackathon.service.accounts.dao.repository.SettingsRepository'.(¡§“×üÿÿÿÿ8Ù¥¾ş„/
+u
+java:S1128"ZRemove this unused import 'org.bars.hackathon.service.accounts.dao.entity.SettingsEntity'.(ßËçØ8‹¬âˆ…/
+r
+java:S2259"RA "NullPointerException" could be thrown; "getOriginalFilename()" can return null.(ÄÑŞíÿÿÿÿÿ8»ÆŸŠ…/
+ƒ
+java:S1128"cRemove this unused import 'org.bars.hackathon.service.accounts.dao.entity.mapper.UserEntityMapper'.(²ú˜‘üÿÿÿÿ8‡ƒ‰…/
+ˆ
+java:S1128"hRemove this unused import 'org.bars.hackathon.service.accounts.dto.registration.RegistrationRequestDTO'.(ÁÛ²ºùÿÿÿÿ8¨Øâˆ…/
+i
+java:S1128"IRemove this unused import 'org.springframework.validation.BindingResult'.(‹¶¸ùÿÿÿÿ8§Øâˆ…/
+m
+java:S2259"RA "NullPointerException" could be thrown; "getOriginalFilename()" can return null.(÷ûÄ8¬­Ø…/
+d
+java:S1128"IRemove this unused import 'org.springframework.validation.BindException'.(¬€Ìü8¨Øâˆ…/
+†
+java:S1128"kRemove this unused import 'org.bars.hackathon.service.accounts.validators.RegistrationRequestDTOValidator'.(ÆÏçÓ8‡ƒ‰…/
